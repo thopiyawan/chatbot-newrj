@@ -100,8 +100,8 @@ class GetMessageController extends Controller
             // return $this->replymessage($replyToken,$userMessage,$case);
             // $case = 1;
             // return $this->replymessage($replyToken,$userMessage,$case);
-                $conn_string = "host=ec2-54-227-247-225.compute-1.amazonaws.com port=5432 dbname=d6sqa1kjuhkplb user=kdhscmqukijgmf password=69ed8377f66479ac6222f469c6fa6cd2b2318b0ce23fd6a3f0cd7b94f18606ca";
-                $dbconn = pg_pconnect($conn_string);
+            $conn_string = "ec2-174-129-18-98.compute-1.amazonaws.com port=5432 dbname=da2uvfb9sqgqqkx user=jekogdslngitmk password=260630ae91aebeb544239fc056f8831b8e06754d70ddff6de561693fa0e1c7e5";
+            $dbconn = pg_pconnect($conn_string);
 
                 $result = pg_query($dbconn,"SELECT seqcode FROM sequentsteps WHERE sender_id = '$user'");
                 $num = pg_num_rows($result);
@@ -542,32 +542,31 @@ if($typeMessage=='text'){
                    // $question = sequents::select('question')
                    //              ->where('seqcode',$seqcode)
                    //              ->first();
-        $conn_string = "host=ec2-54-227-247-225.compute-1.amazonaws.com port=5432 dbname=d6sqa1kjuhkplb user=kdhscmqukijgmf password=69ed8377f66479ac6222f469c6fa6cd2b2318b0ce23fd6a3f0cd7b94f18606ca";
-        $dbconn = pg_pconnect($conn_string);
+            $conn_string = "ec2-174-129-18-98.compute-1.amazonaws.com port=5432 dbname=da2uvfb9sqgqqkx user=jekogdslngitmk password=260630ae91aebeb544239fc056f8831b8e06754d70ddff6de561693fa0e1c7e5";
+            $dbconn = pg_pconnect($conn_string);
                 $result = pg_query($dbconn,"SELECT question FROM sequents WHERE seqcode = '$seqcode'");
                 while ($row = pg_fetch_object($result)) {
                    return  $row->question;
                 }  
-                 
     }
      public function insert_sequentsteps($user,$seqcode,$nextseqcode)
     {          
-        $conn_string = "host=ec2-54-227-247-225.compute-1.amazonaws.com port=5432 dbname=d6sqa1kjuhkplb user=kdhscmqukijgmf password=69ed8377f66479ac6222f469c6fa6cd2b2318b0ce23fd6a3f0cd7b94f18606ca";
-        $dbconn = pg_pconnect($conn_string);  
+        $conn_string = "ec2-174-129-18-98.compute-1.amazonaws.com port=5432 dbname=da2uvfb9sqgqqkx user=jekogdslngitmk password=260630ae91aebeb544239fc056f8831b8e06754d70ddff6de561693fa0e1c7e5";
+        $dbconn = pg_pconnect($conn_string);
 
         $insert_sequentsteps = pg_exec($dbconn, "INSERT INTO sequentsteps(sender_id,seqcode,answer,nextseqcode,status,created_at,updated_at )VALUES('{$user}','{$seqcode}','','{$nextseqcode}','1',NOW(),NOW())") or die(pg_errormessage());
         return $insert_sequentsteps;
     }
      public function update_sequentsteps($user,$seqcode,$nextseqcode)
     {          
-        $conn_string = "host=ec2-54-227-247-225.compute-1.amazonaws.com port=5432 dbname=d6sqa1kjuhkplb user=kdhscmqukijgmf password=69ed8377f66479ac6222f469c6fa6cd2b2318b0ce23fd6a3f0cd7b94f18606ca";
-        $dbconn = pg_pconnect($conn_string);  
+        $conn_string = "ec2-174-129-18-98.compute-1.amazonaws.com port=5432 dbname=da2uvfb9sqgqqkx user=jekogdslngitmk password=260630ae91aebeb544239fc056f8831b8e06754d70ddff6de561693fa0e1c7e5";
+        $dbconn = pg_pconnect($conn_string); 
 
         $update_sequentsteps = pg_exec($dbconn, "UPDATE sequentsteps SET  seqcode = '{$seqcode}', nextseqcode = '{$nextseqcode}' WHERE sender_id = '{$user}' ") or die(pg_errormessage());  
         return $update_sequentsteps;
     }
     public function seqcode_select($user){
-        $conn_string = "host=ec2-54-227-247-225.compute-1.amazonaws.com port=5432 dbname=d6sqa1kjuhkplb user=kdhscmqukijgmf password=69ed8377f66479ac6222f469c6fa6cd2b2318b0ce23fd6a3f0cd7b94f18606ca";
+        $conn_string = "ec2-174-129-18-98.compute-1.amazonaws.com port=5432 dbname=da2uvfb9sqgqqkx user=jekogdslngitmk password=260630ae91aebeb544239fc056f8831b8e06754d70ddff6de561693fa0e1c7e5";
         $dbconn = pg_pconnect($conn_string);  
       
        $result = pg_query($dbconn,"SELECT seqcode FROM sequentsteps WHERE sender_id = '$user'");
@@ -583,9 +582,8 @@ if($typeMessage=='text'){
 
     public function replymessage($replyToken,$userMessage,$case)
     {
-          $httpClient = new CurlHTTPClient('Vf5/E8YVJGtBLdDKO0KKypasAfw+x3BjBCXG18D602yuJsY5Jp+r/fS8jS54THIgGIlbySeNWH4k52hCcs+NM/zhWbdso+sw7Vwnt8sqaPBtze3kBiiQUNI4BI/oy+b5j5WlZnsV8yxL8ozCHMQUXwdB04t89/1O/w1cDnyilFU=');
-            $bot = new LINEBot($httpClient, array('channelSecret' => '96503ab7de564a74e4e13c5a7a3e0e40'));
-            
+        $httpClient = new CurlHTTPClient('optt5VsAo7Ixy5uap0fIpfKJa4QHTNlnUJWFL8uSGmZo7Ohi9ohs9ERE4cxUuAWLiiPXAHcfIRqIFpEacTa1RnRkepA8rT9/QiQ2VNmvRXcIMBwIjrKlP6veFw2CW5ldjmWSaq2AzjE9nwYANDWgnwdB04t89/1O/w1cDnyilFU=');
+        $bot = new LINEBot($httpClient, array('channelSecret' => '797e3ae2cfc38864237e3a6a3bfce5dd'));   
             switch($case) {
      
                 case 1 : 
