@@ -72,7 +72,7 @@ class GetMessageController extends Controller
    
      public function index(){
 
-        $conn_string = "host=ec2-54-227-247-225.compute-1.amazonaws.com port=5432 dbname=d6sqa1kjuhkplb user=kdhscmqukijgmf password=69ed8377f66479ac6222f469c6fa6cd2b2318b0ce23fd6a3f0cd7b94f18606ca";
+        $conn_string = "ec2-174-129-18-98.compute-1.amazonaws.com port=5432 dbname=da2uvfb9sqgqqkx user=jekogdslngitmk password=260630ae91aebeb544239fc056f8831b8e06754d70ddff6de561693fa0e1c7e5";
         $dbconn = pg_pconnect($conn_string);
             
           $user = 'U34da60470ce994eed14f212fd309964c';
