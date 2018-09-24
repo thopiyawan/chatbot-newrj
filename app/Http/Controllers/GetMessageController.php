@@ -75,15 +75,15 @@ class GetMessageController extends Controller
         $conn_string = "host=ec2-54-227-247-225.compute-1.amazonaws.com port=5432 dbname=d6sqa1kjuhkplb user=kdhscmqukijgmf password=69ed8377f66479ac6222f469c6fa6cd2b2318b0ce23fd6a3f0cd7b94f18606ca";
         $dbconn = pg_pconnect($conn_string);
             
-          $user = 'U2dc636d2cd052e82c29f5284e00f69b9';
+          $user = 'U34da60470ce994eed14f212fd309964c';
             echo $user;
                    
      }
      public function getmessage()
     {         
     
-            $httpClient = new CurlHTTPClient('Vf5/E8YVJGtBLdDKO0KKypasAfw+x3BjBCXG18D602yuJsY5Jp+r/fS8jS54THIgGIlbySeNWH4k52hCcs+NM/zhWbdso+sw7Vwnt8sqaPBtze3kBiiQUNI4BI/oy+b5j5WlZnsV8yxL8ozCHMQUXwdB04t89/1O/w1cDnyilFU=');
-            $bot = new LINEBot($httpClient, array('channelSecret' => '96503ab7de564a74e4e13c5a7a3e0e40'));
+            $httpClient = new CurlHTTPClient('optt5VsAo7Ixy5uap0fIpfKJa4QHTNlnUJWFL8uSGmZo7Ohi9ohs9ERE4cxUuAWLiiPXAHcfIRqIFpEacTa1RnRkepA8rT9/QiQ2VNmvRXcIMBwIjrKlP6veFw2CW5ldjmWSaq2AzjE9nwYANDWgnwdB04t89/1O/w1cDnyilFU=');
+            $bot = new LINEBot($httpClient, array('channelSecret' => '797e3ae2cfc38864237e3a6a3bfce5dd'));
             // คำสั่งรอรับการส่งค่ามาของ LINE Messaging API
             $content = file_get_contents('php://input');
             // แปลงข้อความรูปแบบ JSON  ให้อยู่ในโครงสร้างตัวแปร array
