@@ -56,7 +56,8 @@ use LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder;
 use LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder;
 use LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselTemplateBuilder;
 use LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder;
-
+define('LINE_MESSAGE_CHANNEL_SECRET','797e3ae2cfc38864237e3a6a3bfce5dd');
+define('LINE_MESSAGE_ACCESS_TOKEN','optt5VsAo7Ixy5uap0fIpfKJa4QHTNlnUJWFL8uSGmZo7Ohi9ohs9ERE4cxUuAWLiiPXAHcfIRqIFpEacTa1RnRkepA8rT9/QiQ2VNmvRXcIMBwIjrKlP6veFw2CW5ldjmWSaq2AzjE9nwYANDWgnwdB04t89/1O/w1cDnyilFU=');
 
 class GetMessageController extends Controller
 {
@@ -82,9 +83,8 @@ class GetMessageController extends Controller
      public function getmessage()
     {         
     
-            $httpClient = new CurlHTTPClient('optt5VsAo7Ixy5uap0fIpfKJa4QHTNlnUJWFL8uSGmZo7Ohi9ohs9ERE4cxUuAWLiiPXAHcfIRqIFpEacTa1RnRkepA8rT9/QiQ2VNmvRXcIMBwIjrKlP6veFw2CW5ldjmWSaq2AzjE9nwYANDWgnwdB04t89/1O/w1cDnyilFU=
-            ');
-            $bot = new LINEBot($httpClient, array('channelSecret' => '797e3ae2cfc38864237e3a6a3bfce5dd'));
+            $httpClient = new CurlHTTPClient(LINE_MESSAGE_ACCESS_TOKEN);
+            $bot = new LINEBot($httpClient, array('channelSecret' => LINE_MESSAGE_CHANNEL_SECRET));
             // คำสั่งรอรับการส่งค่ามาของ LINE Messaging API
             $content = file_get_contents('php://input');
             // แปลงข้อความรูปแบบ JSON  ให้อยู่ในโครงสร้างตัวแปร array
@@ -583,8 +583,8 @@ if($typeMessage=='text'){
 
     public function replymessage($replyToken,$userMessage,$case)
     {
-        $httpClient = new CurlHTTPClient('optt5VsAo7Ixy5uap0fIpfKJa4QHTNlnUJWFL8uSGmZo7Ohi9ohs9ERE4cxUuAWLiiPXAHcfIRqIFpEacTa1RnRkepA8rT9/QiQ2VNmvRXcIMBwIjrKlP6veFw2CW5ldjmWSaq2AzjE9nwYANDWgnwdB04t89/1O/w1cDnyilFU=');
-        $bot = new LINEBot($httpClient, array('channelSecret' => '797e3ae2cfc38864237e3a6a3bfce5dd'));   
+            $httpClient = new CurlHTTPClient(LINE_MESSAGE_ACCESS_TOKEN);
+            $bot = new LINEBot($httpClient, array('channelSecret' => LINE_MESSAGE_CHANNEL_SECRET));
             switch($case) {
      
                 case 1 : 
